@@ -182,7 +182,7 @@ class Slot_Slot_Contrastive_Loss(Loss):
         **kwargs,
     ):
         super().__init__(pred_key, target_key, **kwargs)
-        self.criterion = nn.CrossEntropyLoss()
+        self.criterion = nn.BCEWithLogitsLoss()  # bce is better and faster than ce
         self.temperature = temperature
         self.batch_contrast = batch_contrast
 
